@@ -62,13 +62,13 @@ window.addEventListener('resize', function () { onWindowResize(camera, renderer)
 
 // Variables that will be used for linear interpolation
 const lerpConfig = {
-	destination: new THREE.Vector3(0.0, 0.2, 0.0),
+	destination: new THREE.Vector3(-3.0, 0.0, 3.0),
 	alpha: 0.01,
 	move: true
 }
 
 const lerpConfig2 = {
-	destination: new THREE.Vector3(0.0, 0.2, 0.0),
+	destination: new THREE.Vector3(3.0, 0.0, 3.0),
 	alpha: 0.01,
 	move: true
 }
@@ -80,13 +80,13 @@ function buildInterface() {
 	folder.open();
 
 	folder.add(lerpConfig.destination, 'x', -5, 5).onChange();
-	folder.add(lerpConfig.destination, 'y', 0.1, 3).onChange();
+	folder.add(lerpConfig.destination, 'y', -5, 5).onChange();
 	folder.add(lerpConfig.destination, 'z', -5, 5).onChange();
 	folder.add(lerpConfig, 'alpha', 0.01, 1).onChange();
 	folder.add(lerpConfig, "move", true).name("Move Object");
 
 	folder.add(lerpConfig2.destination, 'x', -5, 5).onChange();
-	folder.add(lerpConfig2.destination, 'y', 0.1, 3).onChange();
+	folder.add(lerpConfig2.destination, 'y', -5, 5).onChange();
 	folder.add(lerpConfig2.destination, 'z', -5, 5).onChange();
 	folder.add(lerpConfig2, 'alpha', 0.01, 1).onChange();
 	folder.add(lerpConfig2, "move", true).name("Move Object");
