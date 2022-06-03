@@ -19,7 +19,7 @@ var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHei
   camera.lookAt(0, 0, 0);
   camera.position.set(2.18, 1.62, 3.31);
   camera.up.set( 0, 1, 0 );
-var objColor = "rgb(255,20,20)";
+var objColor = "rgb(255,255,255)";
 var objShininess = 200;
 
 // To use the keyboard
@@ -60,7 +60,6 @@ torus.rotateX(degreesToRadians(-90))
 scene.add(torus)
 
 //---------------------------------------------------------
-var lightIntensityR = 1.0;
 var lightAngleR = 0;
 var lightColorR = "rgb(255,0,0)";
 
@@ -153,18 +152,36 @@ function keyboardUpdate()
   keyboard.update();
   if ( keyboard.down("Q"))
   {
-    if(spotLightR.visible) spotLightR.visible = false;
-	else spotLightR.visible = true;
+    if(spotLightR.visible) {
+		spotLightR.visible = false; 
+		lightSphereR.visible = false;
+	} 		
+	else {
+		spotLightR.visible = true; 
+		lightSphereR.visible = true;
+	} 
   }
   if ( keyboard.down("W"))
   {
-    if(spotLightG.visible) spotLightG.visible = false;
-	else spotLightG.visible = true;
+    if(spotLightG.visible) {
+		spotLightG.visible = false; 
+		lightSphereG.visible = false;
+	} 		
+	else {
+		spotLightG.visible = true; 
+		lightSphereG.visible = true;
+	} 
   }
   if ( keyboard.down("E"))
   {
-    if(spotLightB.visible) spotLightB.visible = false;
-	else spotLightB.visible = true;
+    if(spotLightB.visible) {
+		spotLightB.visible = false; 
+		lightSphereB.visible = false;
+	} 		
+	else {
+		spotLightB.visible = true; 
+		lightSphereB.visible = true;
+	} 
   }
   if ( keyboard.pressed("A"))
   {
